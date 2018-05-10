@@ -5,10 +5,9 @@
 version: 2
 jobs:
   build:
-
-    # Specify the Xcode version to use
-    macos:
-      xcode: "8.3.3"
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
 
     steps:
       - checkout
