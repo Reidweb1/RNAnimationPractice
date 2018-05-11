@@ -3,6 +3,7 @@ package com.react_native_boilerplate;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.realm.react.RealmReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -23,7 +24,8 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
-                new MainReactPackage()
+                new MainReactPackage(),
+            new RealmReactPackage()
         );
     }
 
