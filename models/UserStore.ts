@@ -1,13 +1,17 @@
 import User, { UserInterface } from './User'
+import Realm from 'realm'
 
+/**
+ * Used as a key for all of the User models
+ * stored in Realm.
+ */
 const userStoreKey: string = 'User'
 
 export default class UserStore {
 
-  // TODO: switch to Realm Type
-  public repository: any
+  public repository: Realm
 
-  constructor(repository: any) {
+  constructor(repository: Realm) {
     this.repository = repository
   }
 
@@ -17,7 +21,19 @@ export default class UserStore {
    * instance
    */
   public findAll = (): User[] => {
-    return this.repository.objects(userStoreKey)
+    const users = this.repository.objects(userStoreKey)
+    return Array.from(users) as User[]
+  }
+
+  /**
+   * Find a single user by the User's UUID.
+   */
+  public findUserById = (userId: string): User => {
+    const users = this.repository.objects(userStoreKey)
+    if (users.length === 0) {
+      return null
+    }
+    return users[0] as User
   }
 
   /**
@@ -41,13 +57,14 @@ export default class UserStore {
    * instance. This function is async and will return
    * when the User is updated.
    */
-  public update = async (user: User, newData: UserInterface): Promise<User> => {
+  public update = (user: User, newData: UserInterface): User => {
     if (!this.userIdExists(user.id)) {
       throw new Error('No User with this UUID exists.')
     }
-    return this.repository.write(() => {
+    this.repository.write(() => {
       user.username = newData.username
     })
+    return user
   }
 
   /**
@@ -56,7 +73,7 @@ export default class UserStore {
    */
   private usernameExists = (username: string): boolean => {
     const usernameFilter: string = 'username = \'' + username + '\''
-    const users: User[] =  this.repository.objects(userStoreKey).filtered(usernameFilter)
+    const users: Realm.Results<{}> =  this.repository.objects(userStoreKey).filtered(usernameFilter)
     return users.length > 0 ? true : false
   }
 
@@ -66,7 +83,7 @@ export default class UserStore {
    */
   private userIdExists = (userId: string): boolean => {
     const userIdFilter: string = 'id = \'' + userId + '\''
-    const users: User[] = this.repository.objects(userStoreKey).filtered(userIdFilter)
+    const users: Realm.Results<{}> = this.repository.objects(userStoreKey).filtered(userIdFilter)
     return users.length > 0 ? true : false
   }
 
