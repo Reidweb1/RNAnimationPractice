@@ -16,6 +16,10 @@ export function registerScreens() {
   Navigation.registerComponent('Home.Detail', () => DetailScreen)
 }
 
+/**
+ * The base interface for the props of any component
+ * that is registered via `Navigation`.
+ */
 interface NavigationProps {
   navigator: Navigator
 }
