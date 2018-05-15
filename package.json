@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --config ../../../../rn-cli.config.js",
-    "test": "jest"
+    "test": "jest && detox build && detox test"
   },
   "dependencies": {
     "@types/faker": "^4.1.2",
@@ -45,6 +45,9 @@
     }
   },
   "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/e2e/"
+    ],
     "preset": "react-native",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"

@@ -5,7 +5,7 @@ export default class DetailScreen extends React.Component {
 
   public render() {
     return (
-      <View />
+      <View testID={ 'DetailScreen' } />
     )
   }
 
