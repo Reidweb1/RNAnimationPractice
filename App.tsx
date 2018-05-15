@@ -1,60 +1,50 @@
 /**
- * Sample React Native App
+ * React Native App (created with react-native init)
  * https://github.com/facebook/react-native
  * 
  * Generated with the TypeScript template
  * https://github.com/emin93/react-native-template-typescript
  */
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Platform } from 'react-native'
+import { Navigation, TabScreen } from 'react-native-navigation'
+import { NavigationStyle, registerScreens } from './navigation'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+/**
+ * Will map the components to the corresponding key. The key
+ * format should be {TabBarTitle}.{ScreenName}
+ */
+registerScreens()
 
-interface Props {}
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.tsx
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+const tabs: TabScreen[] = [
+  {
+    label: 'Home',
+    screen: 'Home.Main',
+    title: 'Home Screen',
+    icon: require('./resources/profile_tab.png'),
+    selectedIcon: require('./resources/profile_tab_selected.png')
+  },
+  {
+    label: 'Home',
+    screen: 'Home.Main',
+    title: 'Home Screen',
+    icon: require('./resources/profile_tab.png'),
+    selectedIcon: require('./resources/profile_tab_selected.png')
   }
-}
+]
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+Navigation.startTabBasedApp({
+  tabs,
+  tabsStyle: {
+    tabBarButtonColor: NavigationStyle.tabBarButtonColor,
+    tabBarSelectedButtonColor: NavigationStyle.tabBarSelectedButtonColor,
+    tabBarBackgroundColor: NavigationStyle.tabBarBackgroundColor,
+    initialTabIndex: 0
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  appStyle: {
+    orientation: 'portrait',
+    bottomTabBadgeTextColor: NavigationStyle.bottomTabBadgeTextColor,
+    bottomTabBadgeBackgroundColor: NavigationStyle.bottomTabBadgeBackgroundColor,
+    hideBackButtonTitle: true
+  }
+})
