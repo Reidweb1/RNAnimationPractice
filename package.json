@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --config ../../../../rn-cli.config.js",
-    "test": "jest"
+    "test": "detox build && detox test && jest"
   },
   "dependencies": {
     "@types/faker": "^4.1.2",
@@ -12,6 +12,7 @@
     "@types/react-native-navigation": "^1.1.9",
     "axios": "^0.18.0",
     "faker": "^4.1.0",
+    "mocha": "^5.1.1",
     "nock": "^9.2.5",
     "react": "16.3.1",
     "react-native": "0.55.4",
@@ -25,14 +26,28 @@
     "@types/react-test-renderer": "16.0.1",
     "babel-jest": "22.4.3",
     "babel-preset-react-native": "4.0.0",
+    "detox": "^7.3.7",
     "jest": "22.4.3",
     "react-native-typescript-transformer": "1.2.5",
     "react-test-renderer": "16.3.1",
+    "realm": "^2.4.1",
     "ts-jest": "22.4.5",
-    "typescript": "2.8.3",
-    "realm": "^2.4.1"
+    "typescript": "2.8.3"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/React_Native_Boilerplate.app",
+        "build": "xcodebuild -project ios/React_Native_Boilerplate.xcodeproj -scheme React_Native_Boilerplate -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    }
   },
   "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/e2e/"
+    ],
     "preset": "react-native",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"

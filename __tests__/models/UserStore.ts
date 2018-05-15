@@ -5,13 +5,13 @@ import Utilities from '../../utilities/Utilities'
 import UserStore from '../../models/UserStore'
 import User, { UserSchema, UserInterface } from '../../models/User'
 
-const repository: Realm = new Realm({
-  schema: [
-    UserSchema
-  ]
-})
-
 describe('UserStore', () => {
+
+  const repository: Realm = new Realm({
+    schema: [
+      UserSchema
+    ]
+  })
 
   /**
    * We need to wipe the Realm store before
@@ -119,5 +119,12 @@ describe('UserStore', () => {
       expect(error).not.toBe(null)
     }
   })
+
+  /**
+   * We need to force quit since the Realm store
+   * is still hanging around after the tests.
+   */
+  // Remove before pushing code - causes failure on circeCI
+  // afterAll(() => setTimeout(() => process.exit(), 500))
 
 })
