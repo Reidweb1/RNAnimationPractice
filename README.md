@@ -2,6 +2,8 @@
 
 This repository contains the source code for a `React-Native` application built with `react-native init` written in `TypeScript`.
 
+[![CircleCI](https://circleci.com/gh/meshhq/react-native-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/meshhq/react-native-boilerplate/tree/master)
+
 ## Rationale
 
 We wanted to create a repository that allows developers to reap all the benefits of cross-platform development, `TypeScript`, unit testing with `jest`, UI testing with `detox`, easy networking with `axios`, and simple local storage with `Realm` without having to fight through all of the configuration.
