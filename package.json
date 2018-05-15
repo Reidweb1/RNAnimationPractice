@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --config ../../../../rn-cli.config.js",
-    "test": "jest && detox build && detox test"
+    "test": "detox build && detox test && jest"
   },
   "dependencies": {
     "@types/faker": "^4.1.2",
