@@ -1,0 +1,41 @@
+# iOS CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Install Dependencies
+      - run:
+          name: Install Dependencies
+          # We're removing node_modules here because oterwise yarn will not
+          # reinstall the architechture that already exists for Realm. Since we
+          # originally installed the dependencies on a mac the architecture fo Realm
+          # was Darwin. The image this build is running in requires Linux; so we're
+          # removing and reinstalling dependencies.
+          command: rm -rf node_modules && yarn && ls ./node_modules/realm/compiled
+
+      # Build the app and run tests
+      - run:
+          name: Build and run tests
+          command: yarn test
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: scan-test-results
+      - store_artifacts:
+          path: ~/Library/Logs/scan
+          destination: scan-logs
