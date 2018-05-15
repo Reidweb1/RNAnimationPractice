@@ -124,6 +124,7 @@ describe('UserStore', () => {
    * We need to force quit since the Realm store
    * is still hanging around after the tests.
    */
-  afterAll(() => setTimeout(() => process.exit(), 500))
+  // Remove before pushing code - causes failure on circeCI
+  // afterAll(() => setTimeout(() => process.exit(), 500))
 
 })
