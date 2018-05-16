@@ -2,7 +2,7 @@
 
 This repository contains the source code for a `React-Native` application built with `react-native init` written in `TypeScript`.
 
-[![CircleCI](https://circleci.com/gh/meshhq/react-native-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/meshhq/react-native-boilerplate/tree/master)
+[![CircleCI](https://circleci.com/gh/meshhq/react-native-boilerplate.svg?style=svg)](https://circleci.com/gh/meshhq/react-native-boilerplate)
 
 ## Rationale
 
