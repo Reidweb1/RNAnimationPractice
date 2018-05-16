@@ -2,8 +2,8 @@ import 'react-native'
 import React from 'react'
 import Nock from 'nock'
 
-import User, { UserInterface } from '../../models/User'
-import UserService, { baseURL } from '../../services/UserService'
+import User, { UserInterface } from '../../src/models/User'
+import UserService, { baseURL } from '../../src/services/UserService'
 
 import {
   getUsers,
@@ -11,9 +11,9 @@ import {
   updateUser,
   createUserResponse,
   createUserInterface
-} from '../../utilities/MockResponses'
+} from '../../src/utilities/MockResponses'
 import { notDeepEqual } from 'assert';
-import Utilities from '../../utilities/Utilities';
+import Utilities from '../../src/utilities/Utilities';
 
 /**
  * We need to create this User before the mocks

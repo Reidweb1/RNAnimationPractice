@@ -41,6 +41,12 @@ buck-out/
 \.buckd/
 *.keystore
 
+# REALM
+./default.realm.management
+default.realm
+default.realm.lock
+default.realm.note
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the

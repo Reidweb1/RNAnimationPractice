@@ -1,6 +1,6 @@
 import Realm from 'realm'
 import UserStore from './UserStore'
-import { UserSchema } from './User'
+import { UserSchema } from '../models/User'
 
 const repository: Realm = new Realm({
   schema: [

@@ -1,7 +1,8 @@
 /**
  * This interface defines all of the colors and
  * styles we'll need for our TabNavigators and
- * StackNavigators 
+ * StackNavigators. They're used in `App.tsx` when
+ * we create the Navigation Stack.
  */
 interface NavigationStyle {
   tabBarBackgroundColor: string

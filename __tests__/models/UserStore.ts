@@ -1,9 +1,9 @@
 import 'react-native'
 import React from 'react'
 import Realm from 'realm'
-import Utilities from '../../utilities/Utilities'
-import UserStore from '../../models/UserStore'
-import User, { UserSchema, UserInterface } from '../../models/User'
+import Utilities from '../../src/utilities/Utilities'
+import UserStore from '../../src/store/UserStore'
+import User, { UserSchema, UserInterface } from '../../src/models/User'
 
 describe('UserStore', () => {
 

@@ -8,8 +8,8 @@
 
 import { Platform } from 'react-native'
 import { Navigation, TabScreen } from 'react-native-navigation'
-import { NavigationStyle, registerScreens } from './navigation'
-import { initializeStore } from './models'
+import { NavigationStyle, registerScreens } from './src/navigation'
+import { initializeStore } from './src/store'
 
 /**
  * Will map the components to the corresponding key. The key
@@ -27,15 +27,15 @@ const tabs: TabScreen[] = [
     label: 'Home',
     screen: 'Home.Main',
     title: 'Home Screen',
-    icon: require('./assets/profile_tab.png'),
-    selectedIcon: require('./assets/profile_tab_selected.png')
+    icon: require('./src/assets/profile_tab.png'),
+    selectedIcon: require('./src/assets/profile_tab_selected.png')
   },
   {
     label: 'Home',
     screen: 'Home.Main',
     title: 'Home Screen',
-    icon: require('./assets/profile_tab.png'),
-    selectedIcon: require('./assets/profile_tab_selected.png')
+    icon: require('./src/assets/profile_tab.png'),
+    selectedIcon: require('./src/assets/profile_tab_selected.png')
   }
 ]
 
