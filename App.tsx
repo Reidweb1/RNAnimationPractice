@@ -27,15 +27,15 @@ const tabs: TabScreen[] = [
     label: 'Home',
     screen: 'Home.Main',
     title: 'Home Screen',
-    icon: require('./assets/profile_tab.png'),
-    selectedIcon: require('./assets/profile_tab_selected.png')
+    icon: require('./src/assets/profile_tab.png'),
+    selectedIcon: require('./src/assets/profile_tab_selected.png')
   },
   {
     label: 'Home',
     screen: 'Home.Main',
     title: 'Home Screen',
-    icon: require('./assets/profile_tab.png'),
-    selectedIcon: require('./assets/profile_tab_selected.png')
+    icon: require('./src/assets/profile_tab.png'),
+    selectedIcon: require('./src/assets/profile_tab_selected.png')
   }
 ]
 
