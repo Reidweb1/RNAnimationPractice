@@ -1,4 +1,4 @@
-import User, { UserInterface } from './User'
+import User, { UserInterface } from '../models/User'
 import Realm from 'realm'
 
 /**

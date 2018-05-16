@@ -8,8 +8,8 @@
 
 import { Platform } from 'react-native'
 import { Navigation, TabScreen } from 'react-native-navigation'
-import { NavigationStyle, registerScreens } from './navigation'
-import { initializeStore } from './models'
+import { NavigationStyle, registerScreens } from './src/navigation'
+import { initializeStore } from './src/store'
 
 /**
  * Will map the components to the corresponding key. The key
