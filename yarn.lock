@@ -4918,9 +4918,9 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-realm@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/realm/-/realm-2.4.1.tgz#5ab25c1c3f642eaad49754e3a29e72b9cca8c4c9"
+realm@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/realm/-/realm-2.6.0.tgz#8ac8f619564495d710d25b89cccccbe570c42da8"
   dependencies:
     command-line-args "^4.0.6"
     decompress "^4.2.0"

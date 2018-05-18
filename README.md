@@ -77,6 +77,12 @@ Navigate into the root of the cloned directory and install the dependencies.
 yarn
 ```
 
+Link `react-native-navigation` and `Realm` by running.
+
+```
+react-native link
+```
+
 Run the application on the Xcode simulator with:
 
 ```
