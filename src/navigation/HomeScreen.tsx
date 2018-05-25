@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavigationProps } from './index'
+import Logo from '../animated_components/Logo'
 import {
   View,
   Text,
@@ -12,18 +13,9 @@ export default class HomeScreen extends React.Component<NavigationProps, any> {
   public render() {
     return (
       <View testID={ 'HomeScreenTest' } style={ styles.container }>
-        <TouchableOpacity testID={ 'HomeScreenButton' } onPress={ this.navigation }>
-          <Text style={ styles.text }>Navigate</Text>
-        </TouchableOpacity>
+        <Logo />
       </View>
     )
-  }
-
-  private navigation = () => {
-    this.props.navigator.push({
-      screen: 'Home.Detail',
-      title: 'Detail Screen'
-    })
   }
 
 }

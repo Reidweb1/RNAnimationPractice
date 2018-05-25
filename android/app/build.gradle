@@ -137,6 +137,8 @@ android {
 }
 
 dependencies {
+    compile project(':realm')
+    compile project(':react-native-navigation')
     implementation project(':realm')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:design:25.3.1'
