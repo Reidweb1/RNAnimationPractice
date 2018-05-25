@@ -1,19 +1,16 @@
 import React from 'react'
-import { NavigationProps } from './index'
 import Logo, { LogoStyle } from '../animated_components/Logo'
 import {
   View,
-  Text,
-  StyleSheet,
-  TouchableOpacity
+  StyleSheet
 } from 'react-native'
 
-export default class HomeScreen extends React.Component<NavigationProps, any> {
+export default class SpringScreen extends React.Component {
 
   public render() {
     return (
-      <View testID={ 'HomeScreenTest' } style={ styles.container }>
-        <Logo animationStyle={ LogoStyle.Spin }/>
+      <View style={ styles.container }>
+        <Logo animationStyle={ LogoStyle.Spring } />
       </View>
     )
   }

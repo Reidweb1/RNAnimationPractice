@@ -1,7 +1,8 @@
 import { Navigation, Navigator } from 'react-native-navigation'
 
 import HomeScreen from './HomeScreen'
-import DetailScreen from './DetailScreen'
+import FadeScreen from './FadeScreen'
+import SpringScreen from './SpringScreen'
 
 import NavigationStyle from './constants'
 
@@ -13,7 +14,8 @@ import NavigationStyle from './constants'
  */
 export function registerScreens() {
   Navigation.registerComponent('Home.Main', () => HomeScreen)
-  Navigation.registerComponent('Home.Detail', () => DetailScreen)
+  Navigation.registerComponent('Fade.Main', () => FadeScreen)
+  Navigation.registerComponent('Spring.Main', () => SpringScreen)
 }
 
 /**

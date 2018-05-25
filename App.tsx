@@ -24,16 +24,23 @@ initializeStore()
 
 const tabs: TabScreen[] = [
   {
-    label: 'Home',
+    label: 'Spin',
     screen: 'Home.Main',
-    title: 'Home Screen',
+    title: 'Spin Screen',
     icon: require('./src/assets/profile_tab.png'),
     selectedIcon: require('./src/assets/profile_tab_selected.png')
   },
   {
-    label: 'Home',
-    screen: 'Home.Main',
-    title: 'Home Screen',
+    label: 'Fade',
+    screen: 'Fade.Main',
+    title: 'Fade Screen',
+    icon: require('./src/assets/profile_tab.png'),
+    selectedIcon: require('./src/assets/profile_tab_selected.png')
+  },
+  {
+    label: 'Spring',
+    screen: 'Spring.Main',
+    title: 'Spring Screen',
     icon: require('./src/assets/profile_tab.png'),
     selectedIcon: require('./src/assets/profile_tab_selected.png')
   }
